@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mbalz Creations | Project Detail</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background-color: #ffffff; color: #000; line-height: 1.8; }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+
+        /* Back Navigation */
+        .back-nav { padding: 40px 0; }
+        .back-link { text-decoration: none; color: #000; font-size: 0.9rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+
+        /* Hero */
+        .project-hero { padding: 60px 0; border-bottom: 1px solid #eee; }
+        .project-hero h1 { font-size: clamp(2.5rem, 5vw, 3.5rem); margin-bottom: 10px; }
+        .tagline { font-size: 1.2rem; color: #666; font-weight: 300; }
+
+        /* Metadata */
+        .meta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; padding: 40px 0; border-bottom: 1px solid #eee; }
+        .meta-item h4 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; color: #999; margin-bottom: 5px; }
+
+        /* --- SLIDESHOW STYLING --- */
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            margin: 60px auto;
+            border: 1px solid #eee;
+            overflow: hidden;
+        }
+
+        .mySlides {
+            display: none; /* Hidden by default */
+            width: 100%;
+        }
+
+        .mySlides img {
+            width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* Next & Previous Buttons */
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            background-color: rgba(0,0,0,0.3);
+        }
+
+        .next { right: 0; border-radius: 3px 0 0 3px; }
+        .prev:hover, .next:hover { background-color: rgba(0,0,0,0.8); }
+
+        /* Dots/Indicators */
+        .dot-container { text-align: center; margin-bottom: 30px; }
+        .dot {
+            cursor: pointer;
+            height: 12px;
+            width: 12px;
+            margin: 0 4px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+        .active, .dot:hover { background-color: #000; }
+
+        /* Fading animation */
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+        @keyframes fade {
+            from {opacity: .4} 
+            to {opacity: 1}
+        }
+        /* --- END SLIDESHOW STYLING --- */
+
+        /* Content */
+        .content-section { padding: 40px 0; }
+        .content-section h2 { font-size: 2rem; margin-bottom: 20px; }
+        .features-list { list-style: none; margin: 30px 0; }
+        .features-list li { padding: 15px 0; border-bottom: 1px solid #fafafa; display: flex; align-items: center; }
+        .features-list li::before { content: "—"; margin-right: 15px; font-weight: bold; }
+
+        /* Contact Form */
+        .work-section { padding: 100px 0; background-color: #fdfdfd; border-top: 1px solid #eee; }
+        .work-section h2 { text-align: center; font-size: 2.5rem; margin-bottom: 10px; }
+        .work-section p { text-align: center; color: #666; margin-bottom: 50px; }
+
+        .contact-form { max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+        .contact-form label { display: flex; flex-direction: column; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; gap: 8px; }
+        .contact-form input, .contact-form textarea {
+            width: 100%; padding: 15px; border: 1px solid #000; 
+            font-family: 'Inter', sans-serif; font-size: 1rem; 
+            outline: none; background-color: #fff;
+        }
+        .contact-form input:focus, .contact-form textarea:focus { background-color: #fafafa; }
+        .form-row { display: flex; gap: 20px; }
+        .form-row label { flex: 1; }
+        .btn-submit { width: 100%; padding: 18px; background-color: #000; color: #fff; border: none; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; cursor: pointer; transition: 0.3s; margin-top: 10px; }
+        .btn-submit:hover { background-color: #333; }
+        
+        #form-status { text-align: center; margin-top: 20px; font-weight: 700; display: none; }
+
+        @media (max-width: 768px) {
+            .form-row { flex-direction: column; gap: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="container back-nav">
+        <a href="index.html" class="back-link">← Back to Portfolio</a>
+    </nav>
+
+    <header class="project-hero container">
+        <h1>Mbalz Creations</h1>
+        <p class="tagline">An all-in-one digital platform for creative solutions and curated retail.</p>
+    </header>
+
+    <div class="container meta-grid">
+        <div class="meta-item"><h4>Role</h4><p>Founder & Lead Developer</p></div>
+        <div class="meta-item"><h4>Tech Stack</h4><p>HTML, CSS & JS</p></div>
+        <div class="meta-item"><h4>Year</h4><p>2026</p></div>
+    </div>
+
+    <main class="container">
+        <section class="content-section">
+            
+            <div class="slideshow-container">
+                <div class="mySlides fade">
+                    <img src="1.jpg" alt="Home Page Preview">
+                </div>
+                <div class="mySlides fade">
+                    <img src="2.jpg" alt="Product Section Preview">
+                </div>
+                <div class="mySlides fade">
+                    <img src="3.jpg" alt="Creative Services Preview">
+                </div>
+                <div class="mySlides fade">
+                    <img src="4.jpg" alt="Mobile View Preview">
+                </div>
+
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+
+            <div class="dot-container">
+                <span class="dot" onclick="currentSlide(1)"></span> 
+                <span class="dot" onclick="currentSlide(2)"></span> 
+                <span class="dot" onclick="currentSlide(3)"></span> 
+                <span class="dot" onclick="currentSlide(4)"></span> 
+            </div>
+
+            <h2>Project Overview</h2>
+            <p>
+                Mbalz Creations is a hybrid business model that integrates professional web development 
+                services with a boutique retail shop. I engineered this platform to handle service 
+                inquiries for web design starting at R3,000, while showcasing creative physical 
+                products such as custom shoes, perfumes, and hair accessories.
+            </p>
+
+            <ul class="features-list">
+                <li><strong>Custom Branding:</strong> Minimalist UI designed to let product photography shine.</li>
+                <li><strong>Responsive Architecture:</strong> Fully optimized for mobile shoppers and clients.</li>
+                <li><strong>Business Logic:</strong> Integrated service tiers and automated inquiry flows.</li>
+            </ul>
+        </section>
+    </main>
+
+    <section class="work-section">
+        <div class="container">
+            <h2>Work With Me</h2>
+            <p>Fill in the details below to start our collaboration.</p>
+            
+            <form id="contact-form" action="https://formspree.io/f/mojkwwak" method="POST" class="contact-form">
+                <div class="form-row">
+                    <label>
+                        Name:
+                        <input type="text" name="name" placeholder="Mbali" required>
+                    </label>
+                    <label>
+                        Surname:
+                        <input type="text" name="surname" placeholder="Mahlangu" required>
+                    </label>
+                </div>
+
+                <label>
+                    Your email:
+                    <input type="email" name="email" placeholder="email@example.com" required>
+                </label>
+
+                <label>
+                    WhatsApp Number:
+                    <input type="tel" name="whatsapp" placeholder="081 234 5678" required>
+                </label>
+
+                <label>
+                    Your message:
+                    <textarea name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+                </label>
+
+                <button type="submit" id="submit-btn" class="btn-submit">Send</button>
+                <p id="form-status"></p>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        /* --- SLIDESHOW LOGIC --- */
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {slideIndex = 1}    
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";  
+            dots[slideIndex-1].className += " active";
+        }
+
+        /* --- FORM SUBMISSION LOGIC --- */
+        const form = document.getElementById("contact-form");
+        const status = document.getElementById("form-status");
+        const btn = document.getElementById("submit-btn");
+
+        async function handleSubmit(event) {
+            event.preventDefault();
+            btn.innerHTML = "Sending...";
+            
+            const data = new FormData(event.target);
+            
+            fetch("https://formspree.io/f/mojkwwak", {
+                method: "POST",
+                body: data,
+                headers: { 'Accept': 'application/json' }
+            }).then(response => {
+                if (response.ok) {
+                    status.innerHTML = "Thanks! Your message has been sent.";
+                    status.style.display = "block";
+                    status.style.color = "green";
+                    btn.innerHTML = "Success";
+                    form.reset();
+                } else {
+                    response.json().then(data => {
+                        if (Object.hasOwn(data, 'errors')) {
+                            status.innerHTML = data["errors"].map(error => error["message"]).join(", ");
+                        } else {
+                            status.innerHTML = "Oops! There was a problem submitting your form";
+                        }
+                    })
+                }
+            }).catch(error => {
+                status.innerHTML = "Oops! There was a problem sending your form";
+                status.style.display = "block";
+                status.style.color = "red";
+                btn.innerHTML = "Send";
+            });
+        }
+        
+        form.addEventListener("submit", handleSubmit);
+    </script>
+
+</body>
+</html>

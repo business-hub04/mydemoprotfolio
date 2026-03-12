@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mbali Mahlangu | Portfolio</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <style>
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+      
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            background-color: #fcfcfc;
+        }
+
+        .hero-flex {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            gap: 40px;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-text h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem); 
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 10px;
+        }
+
+        .hero-text span {
+            color: #666;
+        }
+
+        .subtitle {
+            font-size: clamp(1.1rem, 2vw, 1.5rem);
+            font-weight: 300;
+            color: #444;
+        }
+
+        
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .blob-bg {
+            width: clamp(280px, 40vw, 450px);
+            height: clamp(280px, 40vw, 450px);
+            background-color: #ffffff;
+           
+            border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%; 
+            box-shadow: 0 15px 45px rgba(0,0,0,0.06);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .hero-image img {
+            width: 90%;
+            height: auto;
+            object-fit: cover;
+            opacity: 0; 
+        }
+
+       
+        .about {
+            padding: 120px 0;
+            background-color: #ffffff;
+        }
+
+        .about h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 50px;
+            font-weight: 700;
+        }
+
+        .about-content {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .about-content p {
+            font-size: 1.15rem;
+            margin-bottom: 25px;
+            text-align: center;
+            color: #333;
+        }
+
+       
+        .fade-in {
+            animation: fadeInMove 1.8s ease-out forwards;
+        }
+
+        @keyframes fadeInMove {
+            from { 
+                opacity: 0; 
+                transform: translateY(30px); 
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0); 
+            }
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .hero {
+                height: auto;
+                padding: 100px 0 60px 0;
+            }
+
+            .hero-flex {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-text {
+                order: 2; 
+            }
+
+            .hero-image {
+                order: 1;
+                margin-bottom: 30px;
+            }
+
+  .about-content p {
+          text-align: left;
+   }
+ }
+
+       
+ .skills {
+    padding: 100px 0;
+    background-color: #fcfcfc;
+    }
+
+.skills h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.skills-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.skill-item {
+    margin-bottom: 35px;
+}
+
+.skill-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-weight: 400;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background-color: #e0e0e0; 
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: #000000; 
+    border-radius: 4px;
+    transition: width 2s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+}
+
+.projects {
+    padding: 100px 0;
+    background-color: #ffffff;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.projects-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.project-card {
+    text-align: center;
+    width: 350px;
+}
+
+.project-block {
+    background-color: #000000;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+}
+
+.project-block h3 {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+    z-index: 2;
+}
+
+.project-block::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transition: 0.5s;
+}
+
+.project-block:hover {
+    transform: scale(1.05); 
+}
+
+.project-block:hover::before {
+    left: 150%; 
+    transition: 0.7s;
+}
+
+.read-more {
+    display: inline-block;
+    color: #000000;
+    text-decoration: none;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.read-more::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #000000;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+
+.read-more:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+@media (max-width: 768px) {
+    .project-card {
+        width: 100%;
+    }
+}
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <div class="container hero-flex">
+            <div class="hero-text">
+                <h1>Hello there,<br> I am <span>Mbali Mahlangu</span></h1>
+                <p class="subtitle">Software Developer & Web Designer</p>
+            </div>
+            
+            <div class="hero-image">
+                <div class="blob-bg">
+                    <img src="mbali.jpg" alt="Mbali Mahlangu" class="fade-in">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <p>
+                    I am Mbali Mahlangu, a final-year Software Development student at IIE Rosebank College, Braamfontein. 
+                    I have always thrived at the intersection of creativity and problem-solving, which led me to 
+                    mastering full-stack technologies to build clean, functional digital solutions.
+                </p>
+                <p>
+                    Beyond my studies, I am an active entrepreneur. I recently launched a business dedicated to 
+                    building professional websites for small businesses, helping them transition into the digital 
+                    space and reach more customers. My goal is to combine technical precision with minimalist 
+                    design to create tools that are not only beautiful but drive real-world results.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="skills">
+    <div class="container">
+        <h2>My Skills</h2>
+        <div class="skills-container">
+            
+            <div class="skill-item">
+                <div class="skill-info">
+                    <span>HTML</span>
+                    <span class="skill-number" data-target="95">0%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 0%;" data-width="95%"></div>
+                </div>
+            </div>
+
+            <div class="skill-item">
+                <div class="skill-info">
+                    <span>CSS</span>
+                    <span class="skill-number" data-target="90">0%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 0%;" data-width="90%"></div>
+                </div>
+            </div>
+
+            <div class="skill-item">
+                <div class="skill-info">
+                    <span>JavaScript</span>
+                    <span class="skill-number" data-target="85">0%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 0%;" data-width="85%"></div>
+                </div>
+            </div>
+
+            <div class="skill-item">
+                <div class="skill-info">
+                    <span>Flutter</span>
+                    <span class="skill-number" data-target="80">0%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 0%;" data-width="80%"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+<section class="projects">
+    <div class="container">
+        <h2 class="section-title">My Projects</h2>
+        <div class="projects-grid">
+            
+            <div class="project-card">
+                <div class="project-block">
+                    <h3>Project 1</h3>
+                </div>
+                <a href="project1.html" class="read-more">Read More</a>
+            </div>
+
+            <div class="project-card">
+                <div class="project-block">
+                    <h3>Project 2</h3>
+                </div>
+                <a href="project2.html" class="read-more">Read More</a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<script>
+    const skillSection = document.querySelector('.skills');
+    const progressBars = document.querySelectorAll('.progress-fill');
+    const skillNumbers = document.querySelectorAll('.skill-number');
+
+    const showProgress = () => {
+        progressBars.forEach(bar => {
+            const width = bar.getAttribute('data-width');
+            bar.style.width = width;
+        });
+
+        skillNumbers.forEach(number => {
+            const target = +number.getAttribute('data-target');
+            let count = 0;
+            const updateCount = () => {
+                const increment = target / 100;
+                if (count < target) {
+                    count += increment;
+                    number.innerText = Math.ceil(count) + "%";
+                    setTimeout(updateCount, 20);
+                } else {
+                    number.innerText = target + "%";
+                }
+            };
+            updateCount();
+        });
+    };
+
+    // Intersection Observer to trigger when visible
+    const observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+            showProgress();
+            observer.unobserve(skillSection);
+        }
+    }, { threshold: 0.5 });
+
+    observer.observe(skillSection);
+</script>
+</body>
+</html>
